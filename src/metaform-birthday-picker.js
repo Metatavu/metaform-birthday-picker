@@ -94,7 +94,7 @@
     _updateDisabledDates: function(daysInMonth) {
       var dayInput = this.container.find('.metaform-birtday-day-input');
       dayInput.find('option').each(function() {
-        if($(this).val() > daysInMonth) {
+        if(!$(this).val() || $(this).val() > daysInMonth) {
           $(this).attr('disabled', 'disabled');
         } else {
           $(this).removeAttr('disabled');
@@ -111,7 +111,7 @@
         daySelect.attr('required', 'required');
       }
       
-      daySelect.append($('<option>').attr('value', '').attr('disabled', 'disabled').text(this.options.labels['DAY']));
+      daySelect.append($('<option>').attr('selected', 'selected').attr('value', '').attr('disabled', 'disabled').text(this.options.labels['DAY']));
       
       for(var i = 1; i <= 31; i++) {
         daySelect.append(
@@ -134,7 +134,7 @@
         monthSelect.attr('required', 'required');
       }
 
-      monthSelect.append($('<option>').attr('value', '').attr('disabled', 'disabled').text(this.options.labels['MONTH']));
+      monthSelect.append($('<option>').attr('selected', 'selected').attr('value', '').attr('disabled', 'disabled').text(this.options.labels['MONTH']));
       
       for(var i = 0; i < monthNames.length; i++) {
         monthSelect.append(
@@ -158,7 +158,7 @@
         yearSelect.attr('required', 'required');
       }
 
-      yearSelect.append($('<option>').attr('value', '').attr('disabled', 'disabled').text(this.options.labels['YEAR']));
+      yearSelect.append($('<option>').attr('selected', 'selected').attr('value', '').attr('disabled', 'disabled').text(this.options.labels['YEAR']));
       
       for(var i = currentYear; i > (currentYear - this.options.maxAge); i--) {
         yearSelect.append(
