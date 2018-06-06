@@ -1,6 +1,6 @@
 {
   "name": "metaform-birthday-picker",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "jQueryUI birthday picker module",
   "main": "src/metaform-birthday-picker.js",
   "scripts": {
